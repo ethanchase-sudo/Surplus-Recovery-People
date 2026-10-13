@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surplus Recovery People — Recover What May Be Yours</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="srp.css">
+<script src="image_slot.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo">
+      <span class="mk">S</span>
+      <span class="wm">Surplus Recovery People<small>Surplus funds recovery</small></span>
+    </a>
+    <ul>
+      <li><a href="#where">Surplus Funds</a></li>
+      <li><a href="#services">What We Recover</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#start" class="btn btn-brass cta">Free Evaluation <span class="ar">→</span></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" data-screen-label="01 Hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-l">
+        <span class="eyebrow" style="color:var(--brass-l)">Foreclosure &amp; tax sale surplus</span>
+        <h1>
+          <span class="ln"><span>The sale ended.</span></span>
+          <span class="ln"><span>Your claim to the</span></span>
+          <span class="ln"><span><em class="it">surplus</em> may not have.</span></span>
+        </h1>
+        <p class="lede">If your property sold for more than what was owed, the difference may belong to you. We find out — and handle the claim if it does.</p>
+        <div class="hero-actions">
+          <a href="#start" class="btn btn-brass">Request a Free Evaluation <span class="ar">→</span></a>
+          <a href="#where" class="tlink">How surplus funds happen</a>
+        </div>
+        <ul class="hero-checks"><li>No upfront cost</li><li>We file for you</li><li>All fifty states</li></ul>
+      </div>
+      <div class="hero-r">
+        <div class="hero-photo"><img src="img/house-brick.jpg" alt="A brick home in late afternoon light"></div>
+        
+        <!-- quick check card -->
+        <div class="quiz" id="quiz">
+          <div class="quiz-top">
+            <span class="eyebrow n">Quick check · <span id="qstep">1</span> of 3</span>
+            <div class="quiz-steps"><i class="on"></i><i></i><i></i></div>
+          </div>
+          <div id="qbody"></div>
+          <div class="quiz-foot" id="qfoot">
+            <button class="back" id="qback" disabled>← Back</button>
+            <button class="btn btn-ink" id="qnext" disabled>Continue <span class="ar">→</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHERE THE MONEY COMES FROM -->
+<section class="sec ledger-sec" id="where" data-screen-label="02 Where surplus comes from">
+  <div class="wrap">
+    <div class="ledger-grid">
+      <div class="ledger-copy">
+        <span class="secnum rv">01 — The opportunity</span>
+        <h2 class="rv">Where does the extra money come from?</h2>
+        <p class="rv d1">When a property is sold to satisfy a debt, the sale proceeds pay off what's owed first. If anything is left after those obligations are satisfied, it's considered <strong>surplus</strong> — sometimes called excess proceeds.</p>
+        <p class="rv d1">That money doesn't automatically go back. Someone has to claim it — before a deadline set by law.</p>
+        <ol class="flowlist rv d2">
+          <li><b>01</b><div><strong>Property is sold</strong><span>At a foreclosure auction or a tax sale.</span></div></li>
+          <li><b>02</b><div><strong>Debts and costs are paid</strong><span>Mortgage or taxes, liens, legal and sale fees.</span></div></li>
+          <li><b>03</b><div><strong>Anything remaining is held</strong><span>Often by the court registry or county — until claimed.</span></div></li>
+        </ol>
+      </div>
+
+      <div class="rv d1">
+        <div class="receipt" id="receipt">
+          <div class="stamp">Illustrative<br>example<br>only</div>
+          <div class="r-head"><h4>Sale proceeds, simplified</h4><span>Try it</span></div>
+
+          <div class="r-row">
+            <label>Sale price<small>What the property sold for</small></label>
+            <output id="o-sale">$250,000</output>
+            <input type="range" id="r-sale" min="80000" max="600000" step="5000" value="250000" aria-label="Sale price">
+          </div>
+          <div class="r-row minus">
+            <label>Mortgage or tax balance<small>The debt that triggered the sale</small></label>
+            <output id="o-debt">− $150,000</output>
+            <input type="range" id="r-debt" min="0" max="500000" step="5000" value="150000" aria-label="Debt balance">
+          </div>
+          <div class="r-row minus">
+            <label>Liens, fees &amp; sale costs<small>Legal, administrative, other liens</small></label>
+            <output id="o-fees">− $40,000</output>
+            <input type="range" id="r-fees" min="0" max="150000" step="2500" value="40000" aria-label="Fees and liens">
+          </div>
+
+          <div class="r-bar" id="rbar">
+            <div class="b1" id="b1">Debt</div>
+            <div class="b3" id="b3">Costs</div>
+            <div class="b4" id="b4">Surplus</div>
+          </div>
+          <div class="r-legend">
+            <span><i style="background:var(--ink)"></i>Debt paid</span>
+            <span><i style="background:#5d6e66"></i>Costs &amp; liens</span>
+            <span><i style="background:var(--mint)"></i>Possible surplus</span>
+          </div>
+
+          <div class="r-total">
+            <div class="lab">Possible remaining surplus<small>May belong to the former owner, heirs, or other rightful claimants.</small></div>
+            <div class="val" id="o-sur">$60,000</div>
+          </div>
+          <p class="r-fine">A simplified illustration of how surplus can occur. It is not an estimate of any specific case — every sale, state, and set of records is different.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec svc" id="services" data-screen-label="03 What we recover">
+  <div class="wrap">
+    <div class="svc-head">
+      <span class="secnum rv">02 — What we recover</span>
+      <h2 class="rv">Two kinds of sales.<br><em class="it">One focused practice.</em></h2>
+    </div>
+    <div class="svc-cards">
+      <a href="#start" class="svc-card rv">
+        <figure><img src="img/doc-hand.jpg" alt="A hand resting on printed documents"></figure>
+        <div class="svc-body">
+          <span class="num">I.</span>
+          <h3>Foreclosure Surplus</h3>
+          <p>When a foreclosed home sells for more than the mortgage, liens, and costs, the excess may be held for the former owner. We research the sale and file the claim for you.</p>
+          <span class="go">Check a foreclosure sale <span class="ar">→</span></span>
+        </div>
+      </a>
+      <a href="#start" class="svc-card rv d1">
+        <figure><img src="img/courthouse2.jpg" alt="A county courthouse with columns and clock tower"></figure>
+        <div class="svc-body">
+          <span class="num">II.</span>
+          <h3>Tax Sale Surplus</h3>
+          <p>A tax sale can bring in more than the taxes, interest, and fees owed. Depending on local rules, that overage may be claimable — we work through the county process for you.</p>
+          <span class="go">Check a tax sale <span class="ar">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec proc" id="process" data-screen-label="04 Process">
+  <div class="wrap">
+    <div class="proc-wrap">
+      <div class="proc-sticky">
+        <span class="secnum">03 — What happens after you reach out</span>
+        <h2>A clear path, from first call to final check.</h2>
+        <p>You'll always know where your case stands and what comes next. We handle the research, paperwork, and filings — you stay informed.</p>
+        <div class="proc-meter"><span class="big" id="pnum">01</span><span class="of">/ 04</span></div>
+        <div class="proc-meter-label" id="plabel">Review</div>
+      </div>
+
+      <div class="steps" id="steps">
+        <div class="rail" id="rail"></div>
+        <div class="step on" data-n="01" data-l="Review">
+          <span class="dot"></span>
+          <span class="k">Step 01</span>
+          <h3>We review your situation.</h3>
+          <p>You share basic details about the property and the sale. A real person on our team reviews what you've provided — this is a manual review, not an automated eligibility decision.</p>
+          <div class="split"><div><b>You provide</b>Contact info and what you know: address, approximate sale date, type of sale.</div><div><b>We do</b>Confirm receipt and begin looking into the sale.</div></div>
+        </div>
+        <div class="step" data-n="02" data-l="Research">
+          <span class="dot"></span>
+          <span class="k">Step 02</span>
+          <h3>We research the records.</h3>
+          <p>We look into the sale records and related financial documents to determine whether surplus funds may be available, and who may be entitled to claim them.</p>
+          <div class="split"><div><b>You provide</b>Any documents you have — they help, but aren't required to start.</div><div><b>We do</b>Pull and review public sale and court records.</div></div>
+        </div>
+        <div class="step" data-n="03" data-l="Documentation">
+          <span class="dot"></span>
+          <span class="k">Step 03</span>
+          <h3>We prepare and file the claim.</h3>
+          <p>If funds appear to be available, we explain your options plainly. If you choose to move forward, we gather and prepare the necessary documentation and handle the filing for you.</p>
+          <div class="split"><div><b>You provide</b>Signatures and responses to follow-up questions.</div><div><b>We do</b>Prepare paperwork and file with the court or county.</div></div>
+        </div>
+        <div class="step" data-n="04" data-l="Recovery">
+          <span class="dot"></span>
+          <span class="k">Step 04</span>
+          <h3>We see it through to recovery.</h3>
+          <p>We follow the claim through the court or county process and keep you informed at each step. Our fee is contingent — you pay only if funds are recovered.</p>
+          <div class="split"><div><b>You provide</b>Patience — timelines vary by county and case.</div><div><b>We do</b>Track the claim and work toward recovering what may be owed.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about" id="about" data-screen-label="05 About">
+  <div class="wrap">
+    <div class="ab-grid">
+      <div class="ab-photo rv">
+        <image-slot id="founder-photo" shape="rect" placeholder="Drop the founder headshot here"></image-slot>
+      </div>
+      <div class="ab-copy">
+        <span class="secnum rv">04 — About us</span>
+        <h2 class="rv">Helping people recover what may be rightfully theirs.</h2>
+        <p class="rv d1">Surplus fund recovery is built on a simple principle: helping homeowners recover their equity before the statutory deadline. We bring experience and specialized knowledge to every case, and make a complicated process feel simple and risk-free.</p>
+        <div class="ab-facts rv d2">
+          <div><b>No upfront cost</b><span>Contingency only — pay only if you recover.</span></div>
+          <div><b>We file for you</b><span>Research, paperwork, and court filings.</span></div>
+          <div><b>All fifty states</b><span>Foreclosure and tax sale surplus.</span></div>
+          <div><b>A real person</b><span>Every case reviewed by our team.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq" id="faq" data-screen-label="06 FAQ">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-side">
+        <span class="secnum rv">05 — Straight answers</span>
+        <h2 class="rv">Questions, answered plainly.</h2>
+        <p class="rv d1">No surprises about fees, eligibility, or what happens next. If your question isn't here, ask us directly.</p>
+        <a href="#start" class="btn btn-ink rv d2">Ask Us Directly <span class="ar">→</span></a>
+      </div>
+      <div class="faq-list" id="faqlist">
+        <div class="qa open"><button><span class="n">01</span><span class="q">What are surplus funds?</span><span class="pm"></span></button><div class="a"><div><p>Surplus funds — sometimes called excess proceeds — are the money left over after a property is sold at a foreclosure or tax sale and the debts and costs tied to that sale have been paid. That remaining amount may belong to the former owner or other eligible claimants.</p></div></div></div>
+        <div class="qa"><button><span class="n">02</span><span class="q">Am I likely to be eligible?</span><span class="pm"></span></button><div class="a"><div><p>We can't say without reviewing the records. Eligibility depends on the sale, the state, and who has a rightful claim. Submitting your information starts a manual review — it doesn't produce an instant eligibility determination.</p></div></div></div>
+        <div class="qa"><button><span class="n">03</span><span class="q">How much does it cost to get started?</span><span class="pm"></span></button><div class="a"><div><p>Nothing. There's no upfront cost. We work on a contingency basis, so you only pay if funds are recovered. We'll explain our fee clearly before you decide to move forward.</p></div></div></div>
+        <div class="qa"><button><span class="n">04</span><span class="q">Is there a deadline to claim surplus funds?</span><span class="pm"></span></button><div class="a"><div><p>Yes. Surplus funds can be claimed until the statutory period expires, and that period varies by state and type of sale. After it passes, unclaimed funds may be absorbed by the court or state — which is why it helps to start early.</p></div></div></div>
+        <div class="qa"><button><span class="n">05</span><span class="q">What information do I need to provide?</span><span class="pm"></span></button><div class="a"><div><p>To start, just your contact details and whatever you know about the property — the address, the type of sale, and roughly when it happened. Any documents you have can help, but they aren't required for the initial review.</p></div></div></div>
+        <div class="qa"><button><span class="n">06</span><span class="q">Which states do you work in?</span><span class="pm"></span></button><div class="a"><div><p>We operate in all fifty states, handling surplus from both foreclosure sales and tax sales.</p></div></div></div>
+        <div class="qa"><button><span class="n">07</span><span class="q">Do you guarantee a recovery?</span><span class="pm"></span></button><div class="a"><div><p>No. No one can honestly guarantee a recovery before the records are reviewed and the claim goes through the court or county process. What we can promise is a careful review, a clear explanation, and no cost to you unless funds are recovered.</p></div></div></div>
+        <div class="qa"><button><span class="n">08</span><span class="q">How long does the process take?</span><span class="pm"></span></button><div class="a"><div><p>It varies. Timelines depend on the county, the court, and the complexity of the records. We'll keep you informed at every step so you always know where things stand.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec final" id="start" data-screen-label="07 Free evaluation">
+  <div class="final-bg"><img src="img/papers.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="final-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--brass-l)">Take the first step</span>
+        <h2>Let us take a closer look.</h2>
+        <p class="lede">If your property was sold through foreclosure or a tax sale, tell us about it. We'll review the records and let you know what we find — at no cost to you.</p>
+        <div class="final-meta">
+          <div><b>Free</b>Initial evaluation</div>
+          <div><b>$0 upfront</b>Contingency only</div>
+          <div><b>Nationwide</b>All fifty states</div>
+        </div>
+      </div>
+      <form class="form" id="evalform" onsubmit="return false">
+        <div id="formbody">
+          <h3>Request a free evaluation</h3>
+          <p>Takes about two minutes. A person on our team will follow up.</p>
+          <div class="qfield"><label>Type of sale</label>
+            <div class="seg-pick">
+              <label><input type="radio" name="t" value="Foreclosure" checked><span>Foreclosure</span></label>
+              <label><input type="radio" name="t" value="Tax sale"><span>Tax sale</span></label>
+              <label><input type="radio" name="t" value="Not sure"><span>Not sure</span></label>
+            </div>
+          </div>
+          <div class="qrow">
+            <div class="qfield"><label for="f-name">Full name</label><input id="f-name" required placeholder="Jane Doe"></div>
+            <div class="qfield"><label for="f-phone">Phone</label><input id="f-phone" type="tel" placeholder="(000) 000-0000"></div>
+          </div>
+          <div class="qfield"><label for="f-email">Email</label><input id="f-email" type="email" required placeholder="you@email.com"></div>
+          <div class="qrow">
+            <div class="qfield"><label for="f-state">State of property</label><input id="f-state" placeholder="e.g. Illinois"></div>
+            <div class="qfield"><label for="f-year">Approx. sale year</label><input id="f-year" placeholder="e.g. 2023"></div>
+          </div>
+          <div class="qfield"><label for="f-addr">Property address (if known)</label><input id="f-addr" placeholder="Street, city"></div>
+          <button class="btn btn-brass" id="fsubmit">Submit for Free Review <span class="ar">→</span></button>
+          <p class="fine"><span>🔒︎</span>Your information is kept private and used only to review your situation. Submitting starts a manual review — it does not produce an instant eligibility determination.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <a href="#top" class="logo"><span class="mk">S</span><span class="wm">Surplus Recovery People<small>Surplus funds recovery</small></span></a>
+        <p style="max-width:340px">Helping former property owners, heirs, and eligible claimants identify and pursue surplus funds from foreclosure and tax sales.</p>
+      </div>
+      <div><h5>Navigate</h5><ul><li><a href="#where">Surplus Funds</a></li><li><a href="#services">What We Recover</a></li><li><a href="#process">Process</a></li><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h5>Services</h5><ul><li><a href="#services">Foreclosure Surplus</a></li><li><a href="#services">Tax Sale Surplus</a></li><li><a href="#start">Free Evaluation</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>[Phone number]</li><li>[Email address]</li><li>[Business address]</li><li><a href="#start" style="color:var(--brass-l)">Request an evaluation →</a></li></ul></div>
+    </div>
+    <div class="ft-bot">
+      <p>Surplus Recovery People is not a government agency or a law firm, and this website does not provide legal advice. Eligibility and recovery depend on the specific records, state law, and court or county procedures. No recovery is guaranteed.</p>
+      <p>© 2026 Surplus Recovery People · Privacy · Terms</p>
+    </div>
+    <div class="ft-huge">Recover what's yours.</div>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta"><a href="#start" class="btn btn-brass">Request a Free Evaluation <span class="ar">→</span></a></div>
+
+<script src="srp.js"></script>
+</body>
+</html>
